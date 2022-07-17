@@ -13,9 +13,9 @@ def callback(channel):
     else:
         print("This is signal",GPIO.input(channel))
 
-GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=300)  # let us know when the pin goes HIGH or LOW
+GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=100)  # let us know when the pin goes HIGH or LOW
 GPIO.add_event_callback(channel, callback)  # assign function to GPIO PIN, Run function on change
 
 # infinite loop
 while True:
-    time.sleep(1)
+    time.sleep(0.25)
